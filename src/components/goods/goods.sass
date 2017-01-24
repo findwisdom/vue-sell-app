@@ -1,0 +1,96 @@
+.goods
+  position: absolute
+  top: 174px
+  bottom: 45px
+  display: flex
+  width: 100%
+  overflow: hidden
+  .menu_wrap
+    flex: 0 0 80px
+    background: #f3f5f7
+    width: 80px
+    .food_menu
+      display: table
+      font-weight: 200
+      color: #0c1013
+      height: 54px
+      padding: 0 12px
+      font-size: 12px
+      line-height: 14px
+      &.current
+        position: relative
+        margin-top: -1px
+        z-index: 10
+        background: #ffffff
+        font-weight: 700
+        .menu_text
+          @include border-none
+      .menu_text
+        width: 56px
+        @include border-1px(rgba(7,17,27,0.2))
+        display: table-cell
+        vertical-align: middle
+  .foods_wrap
+    flex: 1
+    .food_list
+      overflow: auto
+      h1.foodlist_title
+        background: #f3f5f7
+        border-left: 2px solid #d9dde1
+        padding-left: 14px
+        font-size: 12px
+        color: rgb(147,153,159)
+        line-height: 26px
+      ul
+        overflow: auto
+        .food
+          position: relative
+          display: flex
+          margin: 18px 18px 0 18px
+          padding-bottom: 18px
+          @include border-1px(rgba(7,17,27,0.2))
+          &:last-child
+            @include border-none()
+          .cartcontral_wrapper
+            position: absolute
+            right: 0
+            bottom: 12px
+          .food_img
+            flex: 0 0 56px
+            vertical-align: top
+            font-size: 0
+            display: inline-block
+            margin-right: 10px
+          .food_content
+            flex: 1
+            overflow: hidden
+            .food_name
+              margin-top: 2px
+              font-size: 14px
+              color: rgb(7,17,27)
+              line-height: 14px
+              margin-bottom: 8px
+            .food_desc
+              font-size: 10px
+              color: rgb(147,153,159)
+              line-height: 12px
+              margin-bottom: 8px
+            .food_extra
+              font-size: 10px
+              color: rgb(147,153,159)
+              line-height: 10px
+              .food_count
+                margin-right: 10px
+            .food_price
+              margin-top: 5px
+              font-size: 14px
+              color: rgb(240,20,20)
+              font-weight: 700
+              line-height: 14px
+              .old_price
+                font-size: 10px
+                color: rgb(143,153,159)
+                font-weight: normal
+                line-height: 14px
+                text-decoration: line-through
+

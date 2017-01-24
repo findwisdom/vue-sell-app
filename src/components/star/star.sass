@@ -1,0 +1,47 @@
+.star
+  font-size: 0
+  .item_star
+    display: inline-block
+    background: no-repeat
+  &.star_48
+    .item_star
+      width: 20px
+      height: 19px
+      background-size: 20px 19px
+      margin-right: 22px
+      &:last-child
+        margin-right: 0
+      &.on
+        @include bg-image('star48_on')
+      &.half
+        @include bg-image('star48_half')
+      &.off
+        @include bg-image('star48_off')
+  &.star_24
+    .item_star
+      width: 10px
+      height: 10px
+      background-size: 10px 10px
+      margin-right: 3px
+      &:last-child
+        margin-right: 0
+      &.on
+        @include bg-image('star24_on')
+      &.half
+        @include bg-image('star24_half')
+      &.off
+        @include bg-image('star24_off')
+  &.star_36
+    .item_star
+      width: 15px
+      height: 15px
+      background-size: 15px 15px
+      margin-right: 7px
+      &:last-child
+        margin-right: 0
+      &.on
+        @include bg-image('star36_on')
+      &.half
+        @include bg-image('star36_half')
+      &.off
+        @include bg-image('star36_off')

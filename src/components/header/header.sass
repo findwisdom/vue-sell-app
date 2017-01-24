@@ -1,0 +1,235 @@
+.header
+  position: relative
+  color: #ffffff
+  background: rgba(7,17,27,0.5)
+  overflow: hidden
+  .content_wrapper
+    overflow: hidden
+    position: relative
+    padding: 24px 15px 18px 24px
+    height: 64px
+    .avatar
+      display: inline-block
+      padding-right: 16px
+      font-size: 0
+    .content_font
+      display: inline-block
+      vertical-align: top
+      font-size: 12px
+      .seller_title
+        overflow: hidden
+        margin-top: 2px
+        height: 18px
+        .title_brand
+          display: inline-block
+          font-size: 0
+          width: 30px
+          height: 18px
+          @include bg-image('brand')
+          background-size: cover
+          background-repeat: no-repeat
+        .title_name
+          margin-top: 1px
+          display: inline-block
+          vertical-align: top
+          font-size: 16px
+          line-height: 16px
+          margin-left: 6px
+          font-weight: bold
+      .seller_description
+        margin-top: 8px
+        color: #ffffff
+        font-size: 12px
+        line-height: 12px
+        font-weight: 200
+      .support
+        margin-top: 10px
+        overflow: hidden
+        height: 12px
+        font-size: 0
+        .support_icon
+          vertical-align: top
+          display: inline-block
+          height: 12px
+          width: 12px
+          margin-right: 4px
+          background-size: 12px 12px
+          background-repeat: no-repeat
+          font-size: 0
+          &.decrease
+            @include bg-image('decrease_1')
+          &.guarantee
+            @include bg-image('guarantee_1')
+          &.discount
+            @include bg-image('discount_1')
+          &.invoice
+            @include bg-image('invoice_1')
+          &.special
+            @include bg-image('special_1')
+        .support_text
+          font-size: 12px
+          line-height: 12px
+    .support_count
+      overflow: hidden
+      display: flex
+      display: -webkit-flex
+      align-items: center
+      -webkit-box-align: center
+      position: absolute
+      bottom: 15px
+      right: 12px
+      width: 42px
+      height: 22px
+      border-radius: 7px
+      background: rgba(0,0,0,0.2)
+      font-size: 10px
+      line-height: 12px
+      span
+        text-align: right
+        flex: 1
+        -webkit-box-flex: 1
+        line-height: 22px
+      .icon-keyboard_arrow_right
+        display: inline-block
+        padding-right: 4px
+        height: 22px
+        line-height: 22px
+        font-size: 12px
+  .bulletin-wrapper
+    height: 28px
+    padding: 0 22px 0 12px
+    background: rgba(7,17,27,0.2)
+    font-size: 12px
+    line-height: 28px
+    position: relative
+    .bulletin
+      height: 28px
+      font-size: 12px
+      line-height: 28px
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+      .bulletin-wrapper_icon
+        display: inline-block
+        @include bg-image('bulletin')
+        width: 22px
+        height: 12px
+        margin-top: 8px
+        background-size: 22px 12px
+        background-position: center
+      .bulletin_content
+        margin: 0 4px
+        vertical-align: top
+      .icon-keyboard_arrow_right
+        position: absolute
+        right: 12px
+        font-size: 12px
+        top: 8px
+  .header_background
+    filter: blur(10px)
+    -webkit-filter: blur(10px)
+    overflow: hidden
+    width: 100%
+    position: absolute
+    z-index: -1
+  .sell_detail
+    transition: all 0.5s
+    -webkit-transition: all 0.5s
+    left: 0
+    top: 0
+    //filter: blur(10px)
+    //-webkit-filter: blur(10px)
+    width: 100%
+    height: 100%
+    position: fixed
+    z-index: 2000
+    overflow: auto
+    background: rgba(7,17,27,0.8)
+    &.fade-enter, &.fade-leave-active
+      opacity: 0
+      background: rgba(7,17,27,0)
+    .detail_wrap
+      min-height: 100%
+      .detail_main
+        width: 100%
+        overflow: auto
+        margin-top: 64px
+        padding-bottom: 64px
+        .star
+          margin: 16px auto 18px
+          width: 190px
+        .detail_name
+          display: block
+          width: 100%
+          text-align: center
+          font-weight: 700
+          font-size: 16px
+          line-height: 16px
+        .detail_content
+          padding: 36px
+          .title_head
+            display: -webkit-box
+            display: -ms-flexbox
+            display: flex
+            margin-bottom: 24px
+            align-items: center
+            -webkit-box-align: center
+            -webkit-box-pack: center
+            justify-content: center
+            .title_line
+              @include border-1px(rgba(255,255,255,0.8))
+              flex: 1
+              -webkit-box-flex: 1
+              -ms-flex: 1
+            .head_text
+              padding: 0 12px
+              font-size: 15px
+              font-weight: 700
+          .privilege_support
+            margin-bottom: 28px
+            .privilege_item
+              -webkit-box-pack: center
+              justify-content: center
+              display: -webkit-box
+              display: -ms-flexbox
+              display: flex
+              padding: 0 12px
+              overflow: hidden
+              margin-bottom: 12px
+              .support_icon
+                background-size: 16px 16px
+                background-position: center
+                font-size: 0
+                width: 16px
+                height: 16px
+                margin-right: 6px
+                &.decrease
+                  @include bg-image('decrease_2')
+                &.guarantee
+                  @include bg-image('guarantee_2')
+                &.discount
+                  @include bg-image('discount_2')
+                &.invoice
+                  @include bg-image('invoice_2')
+                &.special
+                  @include bg-image('special_2')
+              .support_text
+                flex: 1
+                -webkit-box-flex: 1
+                -ms-flex: 1
+                display: inline-block
+                font-size: 12px
+                line-height: 16px
+          .bulletin_text
+            font-weight: 200
+            font-size: 14px
+            line-height: 24px
+            padding: 0 12px
+            text-align: justify
+    .detail_close
+      position: relative
+      width: 32px
+      height: 32px
+      margin: -64px auto 0
+      font-size: 32px
+

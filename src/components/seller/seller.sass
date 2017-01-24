@@ -1,0 +1,109 @@
+.seller
+  position: absolute
+  overflow: hidden
+  top: 174px
+  left: 0
+  bottom: 0
+  .seller_wrap
+    overflow: hidden
+    .seller_head
+      overflow: hidden
+      position: relative
+      margin: 0 18px
+      .head_top
+        overflow: hidden
+        padding: 18px 0
+        @include border-1px(rgba(7,17,27,0.1))
+        .name
+          font-size: 14px
+          color: rgb(7,17,27)
+          line-height: 14px
+          margin-bottom: 8px
+        .star_wrap
+          overflow: hidden
+          font-size: 12px
+          color: rgb(7,17,27)
+          .seller_score
+            display: inline-block
+            font-size: 0
+            margin-right: 8px
+          .rating_count
+            vertical-align: top
+            display: inline-block
+            margin-right: 5px
+          .sell_count
+            vertical-align: top
+            display: inline-block
+        .collect
+          position: absolute
+          top: 18px
+          right: 0
+          overflow: hidden
+          width: 40px
+          .icon-favorite
+            margin-top: -3px
+            margin-right: 8px
+            vertical-align: top
+            font-size: 24px
+            float: right
+            text-align: center
+            color: rgb(147,153,159)
+            margin-bottom: 3px
+          .collect_click
+            clear: both
+            text-align: center
+            font-size: 12px
+            line-height: 12px
+            color: rgb(77,85,93)
+            margin-top: 2px
+      .head_bottom
+        display: flex
+        margin: 18px 0
+        .sell_flex
+          flex: 1
+          text-align: center
+          border-right: 1px solid rgba(7,17,27,0.1)
+          .service_name
+            font-size: 10px
+            color: rgb(147,153,159)
+            line-height: 10px
+            margin-bottom: 4px
+          .count_msg
+            font-size: 10px
+          .count
+            font-size: 24px
+        .sell_flex:nth-child(3)
+          border: none
+    .bulletin
+      overflow: hidden
+      margin: 18px 18px 0 18px
+      padding-bottom: 16px
+      @include border-1px(rgba(7,17,27,0.1))
+      .bulletin_name
+        font-size: 14px
+        margin-bottom: 8px
+      .bulletin_font
+        text-align: justify
+        margin: 0 12px
+        font-size: 12px
+        line-height: 24px
+        font-weight: 200
+        color: rgb(240,20,20)
+    .supports
+      margin: 0 18px
+      overflow: hidden
+      .support_list
+        padding: 16px 0
+        @include border-1px(rgba(7,17,27,0.1))
+        .left
+          margin-left: 12px
+          display: inline-block
+        .description
+          margin-top: 1px
+          font-size: 12px
+          color: rgb(7,17,27)
+          margin-left: 6px
+          display: inline-block
+          vertical-align: top
+      .support_list:last-child
+        @include border-none

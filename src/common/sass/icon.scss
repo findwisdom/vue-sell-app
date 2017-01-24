@@ -1,0 +1,79 @@
+
+@import "variables";
+@font-face {
+  font-family: 'sell';
+  src:  url('common/fonts/sell.eot?3so099');
+  src:  url('common/fonts/sell.eot?3so099#iefix') format('embedded-opentype'),
+    url('common/fonts/sell.ttf?3so099') format('truetype'),
+    url('common/fonts/sell.woff?3so099') format('woff'),
+    url('common/fonts/sell.svg?3so099#sell') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'sell' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add_circle {
+  &:before {
+    content: $icon-add_circle;
+  }
+}
+.icon-arrow_lift {
+  &:before {
+    content: $icon-arrow_lift;
+  }
+}
+.icon-check_circle {
+  &:before {
+    content: $icon-check_circle;
+  }
+}
+.icon-close {
+  &:before {
+    content: $icon-close;
+  }
+}
+.icon-favorite {
+  &:before {
+    content: $icon-favorite;
+  }
+}
+.icon-keyboard_arrow_right {
+  &:before {
+    content: $icon-keyboard_arrow_right;
+  }
+}
+.icon-remove_circle_outline {
+  &:before {
+    content: $icon-remove_circle_outline;
+  }
+}
+.icon-shopping_cart {
+  &:before {
+    content: $icon-shopping_cart;
+  }
+}
+.icon-thumb_down {
+  &:before {
+    content: $icon-thumb_down;
+  }
+}
+.icon-thumb_up {
+  &:before {
+    content: $icon-thumb_up;
+  }
+}
+

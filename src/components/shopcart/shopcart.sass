@@ -1,0 +1,153 @@
+.shopcart
+  position: fixed
+  bottom: 0
+  left: 0
+  z-index: 100
+  height: 48px
+  width: 100%
+  .content
+    background: #141d27
+    display: flex
+    .content_left
+      flex: 1
+      .logo_wrap
+        display: inline-block
+        box-sizing: border-box
+        position: relative
+        z-index: 10
+        top: -10px
+        padding: 6px
+        width: 56px
+        height: 56px
+        margin: 0 12px
+        border-radius: 50%
+        background: #141d27
+        font-size: 0
+        .num
+          z-index: 10
+          position: absolute
+          height: 16px
+          width: 23px
+          border-radius: 16px
+          background: #fa1b1c
+          color: #ffffff
+          font-size: 12px
+          text-align: center
+          font-weight: 700
+          top: 0
+          right: 0
+          box-shadow: 0 3px 6px rgba(240,20,10,0.5)
+        .logo
+          width: 44px
+          height: 44px
+          background: #8f9296
+          border-radius: 50%
+          &.highlight
+            background: #00a0dc
+          .icon-shopping_cart
+            display: block
+            width: 44px
+            line-height: 44px
+            text-align: center
+            font-size: 22px
+            color: #131d26
+            &.highlight
+              color: #ffffff
+      .price
+        font-size: 16px
+        color: #919396
+        font-weight: 700
+        display: inline-block
+        vertical-align: top
+        line-height: 26px
+        margin-top: 10px
+        padding-right: 14px
+        border-right: 1px solid #2b333b
+        &.highlight
+          color: #ffffff
+      .desc
+        margin-top: 10px
+        line-height: 26px
+        margin-left: 12px
+        vertical-align: top
+        font-size: 12px
+        color: #919396
+        display: inline-block
+    .content_right
+      text-align: center
+      background: #2b333b
+      width: 105px
+      flex: 0 0 105px
+      font-size: 14px
+      color: #919396
+      font-weight: 700
+      line-height: 48px
+      &.enough
+        color: #ffffff
+        background: #6dc193
+      &.not_enough
+        background: #2b333b
+  .shopcart_list
+    position: absolute
+    left: 0
+    top: 0
+    z-index: -1
+    width: 100%
+    transform: translate3d(0,-100%,0)
+    &.fold-enter-active, &.fold-leave-active
+      transition: all 0.4s
+    &.fold-enter, &.fold-leave-active
+      transform: translate3d(0,0,0)
+    .list_header
+      height: 40px
+      line-height: 40px
+      padding: 0 18px
+      background: #f3f5f7
+      border-bottom: 1px solid rgba(7,17,27,0.1)
+      .title
+        float: left
+        font-size: 14px
+        color: rgb(7,17,27)
+      .empty
+        float: right
+        font-size: 12px
+        color: rgb(0,160,220)
+    .list_content
+      padding: 0 15px
+      background: #ffffff
+      max-height: 217px
+      overflow: hidden
+      .food
+        position: relative
+        padding: 12px 0
+        box-sizing: border-box
+        @include border-1px(rgba(7,17,27,0.1))
+        .name
+          line-height: 24px
+          font-size: 14px
+          color: rgb(7,17,27)
+        .price
+          position: absolute
+          right: 90px
+          bottom: 12px
+          line-height: 24px
+          font-size: 14px
+          font-weight: 700
+          color: rgb(240,20,20)
+        .cartcontral_wrap
+          position: absolute
+          right: 0
+          bottom: 10px
+  .listshow_bg
+    left: 0
+    top: 0
+    position: fixed
+    height: 100%
+    width: 100%
+    filter: blur(2px)
+    z-index: -12
+    transition: all 0.8s
+    background: rgba(7,17,27,0.8)
+    &.fade-enter, &.fade-leave-active
+      background: rgba(7,17,27,0)
+
