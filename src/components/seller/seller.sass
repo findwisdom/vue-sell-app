@@ -4,7 +4,9 @@
   top: 174px
   left: 0
   bottom: 0
+  width: 100%
   .seller_wrap
+    width: 100%
     overflow: hidden
     .seller_head
       overflow: hidden
@@ -40,15 +42,17 @@
           right: 0
           overflow: hidden
           width: 40px
-          .icon-favorite
-            margin-top: -3px
-            margin-right: 8px
-            vertical-align: top
-            font-size: 24px
-            float: right
-            text-align: center
-            color: rgb(147,153,159)
-            margin-bottom: 3px
+          .collect_icon
+            height: 24px
+            width: 24px
+            margin: 0 auto 3px
+            .icon-favorite
+              vertical-align: top
+              font-size: 24px
+              text-align: center
+              color: rgb(147,153,159)
+              &.red_bg
+                color: red
           .collect_click
             clear: both
             text-align: center
@@ -107,3 +111,45 @@
           vertical-align: top
       .support_list:last-child
         @include border-none
+    .fact
+      margin: 0 18px
+      overflow: hidden
+      padding: 18px 0
+      .msg_head
+        font-size: 14px
+      .fact_wrap
+        margin-top: 12px
+        overflow: hidden
+        ul
+          width: 498px
+        .fact_item
+          display: inline-block
+          font-size: 0
+          height: 90px
+          width: 120px
+          margin-right: 6px
+          img
+            width: 100%
+            height: 100%
+        .fact_item:last-child
+          margin-right: 0
+    .seller_msg
+      overflow: hidden
+      margin: 0 18px
+      padding: 18px 0
+      .msg_head
+        margin-bottom: 12px
+        font-size: 14px
+      .msg_wrap
+        overflow: hidden
+        .msg_item
+          font-size: 12px
+          padding: 16px 0
+          @include border-1px(rgba(7,17,27,0.1))
+          .msg_font
+            margin: 0 12px
+        .msg_item:first-child
+          border-top: 1px solid rgba(7,17,27,0.1)
+
+
+

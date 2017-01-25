@@ -10,8 +10,8 @@
             <span class="sell_count">月售{{seller.sellCount}}单</span>
           </div>
           <div class="collect">
-            <div class="collect_icon"><i class="icon-favorite"></i></div>
-            <div class="collect_click">已收藏</div>
+            <div class="collect_icon" @click="tragglefavorite($event)"><i class="icon-favorite" :class="{'red_bg':favorite===true}"></i></div>
+            <div class="collect_click">{{favoritetext}}</div>
           </div>
         </div>
         <div class="head_bottom">
@@ -43,6 +43,23 @@
         </ul>
       </div>
       <splite></splite>
+      <div class="fact">
+        <div class="seller_fact">商家实景</div>
+        <div class="fact_wrap" ref="fact_wrap">
+          <ul fact_list ref="fact_list">
+            <li class="fact_item" v-for="fact in seller.pics"><img :src="fact" alt=""/></li>
+          </ul>
+        </div>
+      </div>
+      <splite></splite>
+      <div class="seller_msg">
+        <div class="msg_head">商家信息</div>
+        <div class="msg_wrap">
+          <ul>
+            <li class="msg_item" v-for="msg in seller.infos"><div class="msg_font">{{msg}}</div></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -61,7 +78,23 @@
         Object
       }
     },
+    computed: {
+      favoritetext() {
+        return this.favorite ? '已收藏' : '未收藏';
+      }
+    },
+    data() {
+      return {
+        favorite: false
+      };
+    },
     methods: {
+      tragglefavorite(event) {
+        if (!event._constructed) {
+          return;
+        }
+        this.favorite = !this.favorite;
+      },
       _initscroll() {
         this.$nextTick(() => {
           if (!this.scroll) {
@@ -72,15 +105,35 @@
             this.scroll.refresh();
           }
         });
+      },
+      _initpics() {
+        if (this.seller.pics) {
+          let picwidth = 120;
+          let margin = 6;
+          let width = (picwidth + margin) * this.seller.pics.length - margin;
+          this.$refs.fact_list.style.width = width + 'px';
+          this.$nextTick(() => {
+            if (!this.picscroll) {
+              this.picscroll = new BScroll(this.$refs.fact_wrap, {
+                scrollX: true,
+                eventPassthrough: 'vertical'
+              });
+            } else {
+              this.picscroll.refresh();
+            }
+          });
+        }
       }
     },
     watch: {
       seller() {
         this._initscroll();
+        this._initpics();
       }
     },
     mounted() {
       this._initscroll();
+      this._initpics();
     },
     components: {
       'star': star,
