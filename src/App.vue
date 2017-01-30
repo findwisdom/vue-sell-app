@@ -6,11 +6,14 @@
       <router-link to="/ratings" class="tab-item">评论</router-link>
       <router-link to="/seller" class="tab-item">商家</router-link>
     </div>
-    <router-view :seller="seller"></router-view>
+    <keep-alive>
+      <router-view :seller="seller"></router-view>
+    </keep-alive>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+  import {urlParse} from './common/js/until.js';
   import header from './components/header/header';
   const SUCCESS_OK = 0;
   export default {
@@ -19,14 +22,20 @@
     },
     data: function() {
       return {
-        seller: {}
+        seller: {
+          id: (() => {
+            let queryParam = urlParse();
+            console.log(queryParam);
+            return queryParam.id;
+          })()
+        }
       };
     },
     created: function() {
-      this.$http.get('/api/seller').then((response) => {
+      this.$http.get('/api/seller?id' + this.seller.id).then((response) => {
           response = response.body;
           if (response.success === SUCCESS_OK) {
-            this.seller = response.data;
+            this.seller = Object.assign({}, this.seller, response.data);
           }
       }, (response) => {
         console.log(response);

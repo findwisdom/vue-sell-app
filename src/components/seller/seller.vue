@@ -68,6 +68,7 @@
   @import "./seller.sass";
 </style>
 <script type="text/ecmascript-6">
+  import {saveLocalstorage, loadLocalstorage} from '../../common/js/store.js';
   import icon from '../../components/icon/icon';
   import star from '../../components/star/star';
   import splite from '../../components/splite/splite';
@@ -85,7 +86,9 @@
     },
     data() {
       return {
-        favorite: false
+        favorite: (() => {
+          return loadLocalstorage(this.seller.id, 'favorite', false);
+        })()
       };
     },
     methods: {
@@ -94,6 +97,7 @@
           return;
         }
         this.favorite = !this.favorite;
+        saveLocalstorage(this.seller.id, 'favorite', this.favorite);
       },
       _initscroll() {
         this.$nextTick(() => {
